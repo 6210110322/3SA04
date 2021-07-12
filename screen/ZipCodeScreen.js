@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -20,7 +20,6 @@ const ZipItem = ({place, code, navigation}) => (
             <Text>{code}</Text>
         </View>
     </TouchableHighlight>
-    
 )
 
 export default function ZipCodeScreen(){
