@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -9,12 +9,12 @@ const availableZipItems = [
     { place: 'Chonburi', code: '20000' },
 ]   
 
-const ZipItem = ({place, code}) => {
-    <view>
+const ZipItem = ({place, code}) => (
+    <View>
         <Text>{place}</Text>
         <Text>{code}</Text>
-    </view>
-}
+    </View>
+)
 
 export default function ZipCodeScreen(){
     return(
