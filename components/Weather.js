@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
 
-export default function Weather(){
-    return(
-        <View>
-            <Text>test</Text>
-        </View>
-    )
+const Height = Dimensions.get('window').height;
+const Width = Dimensions.get('window').width;
+
+export default class Weather extends React.Component{
+    render(){
+        return(
+            <SafeAreaView>
+                <ImageBackground source={require('../bg.jpg')}style={styles.background}></ImageBackground>
+            </SafeAreaView>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+        height: Height,
+        width: Width
     },
+    background:{
+        height: "100%",
+        width: "100%"
+    }
   });

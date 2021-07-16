@@ -32,7 +32,7 @@ export default function WeatherScreen(){
 
     if(!loaded){
         return(
-            <View style={styles.container}>
+            <View style={styles.load}>
                 <ActivityIndicator color='gray' size={36} />
             </View>
         )
@@ -43,17 +43,16 @@ export default function WeatherScreen(){
     }
     
     return (
-    <View style={styles.container}>
+    <View>
         <Weather weatherData={weatherData} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  load: {
+    flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center'
   },
 });
