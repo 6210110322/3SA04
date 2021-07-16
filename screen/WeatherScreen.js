@@ -1,8 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import Weather from '../components/Weather';
 
 export default function WeatherScreen(){
     const [weatherData, setWeatherData] = useState(null);
@@ -38,12 +36,15 @@ export default function WeatherScreen(){
                 <ActivityIndicator color='gray' size={36} />
             </View>
         )
+    }else if(weatherData === null){
+        <View>
+
+        </View>
     }
     
     return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+        <Weather weatherData={weatherData} />
     </View>
   );
 }
