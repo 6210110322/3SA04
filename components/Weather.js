@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, SafeAreaView } from 'react-native';
+import SearchBar from '../components/SearchBar';
 
 const Height = Dimensions.get('window').height;
 const Width = Dimensions.get('window').width;
@@ -8,7 +9,11 @@ export default class Weather extends React.Component{
     render(){
         return(
             <SafeAreaView>
-                <ImageBackground source={require('../bg.jpg')}style={styles.background}></ImageBackground>
+                <ImageBackground source={require('../bg.jpg')}style={styles.background}>
+                    <View>
+                        <SearchBar />
+                    </View>
+                </ImageBackground>
             </SafeAreaView>
         )
     }
