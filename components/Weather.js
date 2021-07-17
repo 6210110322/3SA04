@@ -9,10 +9,6 @@ export default function Weather({ weatherData, fetchWeatherData }){
         } = weatherData;
     const [{ main, description, icon }] = weather;
 
-    useEffect(() => {
-        console.log(icon);
-    }, [weatherData])
-
     return(
         <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../bg.jpg')} style={styles.background}>
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
         marginLeft: "5%"
     },
     citytext:{
-        fontSize: 10,
+        fontSize: 12,
         marginLeft: "5%",
         marginTop: "10%"
     },
@@ -92,7 +88,7 @@ const styles = StyleSheet.create({
         width: "80%",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft: "2%"
+        marginLeft: "4%"
     },
     infoview:{
         height: "80%",
