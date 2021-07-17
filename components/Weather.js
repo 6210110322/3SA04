@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions, SafeAreaView, Image } from 'react-native';
 import SearchBar from '../components/SearchBar';
 
-const Height = Dimensions.get('window').height;
-const Width = Dimensions.get('window').width;
-
-export default function Weather ({ weatherData }){
+export default function Weather({ weatherData, fetchWeatherData }){
     const { weather,
             name,
             main: { temp, temp_min, temp_max, pressure, humidity }
@@ -17,15 +14,15 @@ export default function Weather ({ weatherData }){
     }, [weatherData])
 
     return(
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../bg.jpg')} style={styles.background}>
                 <View>
-                    <SearchBar />
+                    <SearchBar fetchWeatherData={fetchWeatherData}/>
                 </View>
 
                 <View style={styles.weatherbox}>
                     <View style={styles.weatherview}>
-                        <Image source={{}} style={styles.weatherimage} />
+                        <Image source={{url:"http://openweathermap.org/img/wn/"+icon+"@2x.png"}} style={styles.weatherimage} />
                         <View>
                             <Text style={styles.temptext}>{temp} °C</Text>
                             <Text style={styles.weathertext}>{main}</Text>
@@ -50,8 +47,8 @@ export default function Weather ({ weatherData }){
 
 const styles = StyleSheet.create({
     container: {
-        height: Height,
-        width: Width
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width
     },
     background:{
         height: "100%",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, SafeAreaView, ImageBackground, Dimensions } from 'react-native';
 import Weather from '../components/Weather';
+import SearchBar from '../components/SearchBar';
 
 export default function WeatherScreen(){
     const [weatherData, setWeatherData] = useState(null);
@@ -38,9 +39,16 @@ export default function WeatherScreen(){
         )
     }else if(weatherData === null){
         return(
-            <View>
-                
-            </View>
+            <SafeAreaView style={styles.container}>
+                <ImageBackground source={require('../bg.jpg')} style={styles.background}>
+                    <View>
+                        <SearchBar fetchWeatherData={fetchWeatherData}/>
+                    </View>
+                    <View>
+                        <Text>City not found! Please try again.</Text>
+                    </View>
+                </ImageBackground>
+            </SafeAreaView>
         )
     }
     
@@ -52,9 +60,18 @@ export default function WeatherScreen(){
 }
 
 const styles = StyleSheet.create({
-  load: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
+    container: {
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width
+    },
+    background:{
+        height: "100%",
+        width: "100%"
+    },
+    load: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: "80%"
+    },
 });
