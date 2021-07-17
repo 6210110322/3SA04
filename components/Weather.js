@@ -7,10 +7,8 @@ const Width = Dimensions.get('window').width;
 
 export default function Weather ({ weatherData }){
     const { weather,
-            descriptionweather,
-            iconimage,
             name,
-            main: { temp, humidity }
+            main: { temp, temp_min, temp_max, pressure, humidity }
         } = weatherData;
     const [{ main, description, icon }] = weather;
 
@@ -34,7 +32,16 @@ export default function Weather ({ weatherData }){
                             <Text style={styles.citytext}>{name}</Text>
                         </View>
                     </View>
-                    
+                </View>
+
+                <View style={styles.infobox}>
+                    <View style={styles.infoview}>
+                        <Text style={styles.desctext}>It's {description}.</Text>
+                        <Text style={styles.othertext}>• Max: {temp_max} °C</Text>
+                        <Text style={styles.othertext}>• Min: {temp_min} °C</Text>
+                        <Text style={styles.othertext}>• Humidity: {humidity} %</Text>
+                        <Text style={styles.othertext}>• Pressure: {pressure} hPA</Text>
+                    </View>
                 </View>
             </ImageBackground>
         </SafeAreaView>
@@ -55,7 +62,8 @@ const styles = StyleSheet.create({
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginTop: "5%"
     },
     weatherview:{
         height: "80%",
@@ -81,5 +89,28 @@ const styles = StyleSheet.create({
         fontSize: 10,
         marginLeft: "5%",
         marginTop: "10%"
+    },
+    infobox:{
+        height: "35%",
+        width: "80%",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: "2%"
+    },
+    infoview:{
+        height: "80%",
+        width: "90%",
+        backgroundColor: "rgba(255,255,255,0.5)",
+        borderRadius: 15
+    },
+    desctext:{
+        fontSize: 20,
+        marginLeft: "8%",
+        marginTop: "5%"
+    },
+    othertext:{
+        fontSize: 15,
+        marginLeft: "12%",
+        marginTop: "3%"
     },
   });
