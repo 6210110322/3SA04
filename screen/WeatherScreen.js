@@ -37,14 +37,16 @@ export default function WeatherScreen(){
             </View>
         )
     }else if(weatherData === null){
-        <View>
-
-        </View>
+        return(
+            <View>
+                
+            </View>
+        )
     }
     
     return (
     <View>
-        <Weather weatherData={weatherData} />
+        <Weather weatherData={weatherData} fetchWeatherData={fetchWeatherData} />
     </View>
   );
 }
