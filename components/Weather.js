@@ -22,7 +22,7 @@ export default function Weather({ weatherData, fetchWeatherData }){
 
                 <View style={styles.weatherbox}>
                     <View style={styles.weatherview}>
-                        <Image source={{url:"http://openweathermap.org/img/wn/"+icon+"@2x.png"}} style={styles.weatherimage} />
+                        <Image source={{uri:"http://openweathermap.org/img/wn/"+icon+"@2x.png"}} style={styles.weatherimage} />
                         <View>
                             <Text style={styles.temptext}>{temp} °C</Text>
                             <Text style={styles.weathertext}>{main}</Text>
