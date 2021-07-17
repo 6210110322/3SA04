@@ -23,23 +23,23 @@
 
 และด้านบนสุดจะมีปุ่ม Search Bar เพื่อค้นหาเมืองที่ต้องการ สามารถพิมเมืองที่ต้องการได้
 
-<img src="02.jpg" width="100">
+<img src="02.jpg" width="400">
 
 เมื่อกดค้นหา หน้าแอปจะเปลี่ยนไปแสดงข้อมูลสภาพอากาศของเมืองที่เลือก
 
-<img src="03.jpg" width="100">
+<img src="03.jpg" width="400">
 
 ### `ตัวอย่างเพิ่มเติม`
 
-<img src="screnshots/ex1.jpg" width="100">
-<img src="screnshots/ex2.jpg" width="100">
-<img src="screnshots/ex3.jpg" width="100">
+<img src="screenshots/ex1.jpg" width="400">
+<img src="screenshots/ex2.jpg" width="400">
+<img src="screenshots/ex3.jpg" width="400">
 
 หากค้นหาเมืองที่ไม่มีอยู่หรือพิมไม่ถูกต้อง จะแสดง
 
 ### `หน้าไม่พบผลการค้นหา`
 
-<img src="04.jpg" width="100">
+<img src="04.jpg" width="400">
 
 หน้านี้จะบอกว่า ไม่มีเมืองที่ค้นา ให้ค้นหาชื่อเมืองใหม่อีกครั้ง
 
@@ -47,8 +47,12 @@
 
 ### `หน้ากำลังโหลดข้อมูล`
 
-<img src="05.jpg" width="100">
-
+<img src="05.jpg" width="400">
 
 ## About Code
 
+- มีการปรับแต่งไฟล์ WeatherScreen.js เพื่อให้ควบคุมการแสดงผลของหน้าจอต่างๆ
+- มีการสร้างไฟล์ Weather.js และ SearchBar.js ขึ้นมา
+- ไฟล์ WeatherScreen.js เป็นไฟล์ที่เกี่ยวกับหน้าจอต่างๆ ของแอป คือ หน้าแสดงข้อมูล หน้าโหลดข้อมูล และหน้าไม่พบการค้นหา โดยมีการนำข้อมูลมาจาก API Key ของ [openweathermap](https://openweathermap.org/)
+- ไฟล์ Weather.js เป็นไฟล์ที่เกี่ยวกับการแสดงผลข้อมูลสภาพอากาศ และมีการเรียกใช้ Search Bar
+- ไฟล์ SearchBar.js เป็นไฟล์ที่เกี่ยวกับช่องการค้นหา ซึ่งมีการ fetch ด้วยชื่อเมืองแล้วนำไปค้นหาสภาพอากาศ
