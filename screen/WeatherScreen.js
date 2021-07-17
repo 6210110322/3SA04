@@ -45,7 +45,7 @@ export default function WeatherScreen(){
                         <SearchBar fetchWeatherData={fetchWeatherData}/>
                     </View>
                     <View>
-                        <Text>City not found! Please try again.</Text>
+                        <Text style={styles.cantfind}>City not found! Please try again.</Text>
                     </View>
                 </ImageBackground>
             </SafeAreaView>
@@ -68,10 +68,15 @@ const styles = StyleSheet.create({
         height: "100%",
         width: "100%"
     },
-    load: {
+    load:{
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: "80%"
     },
+    cantfind:{
+        fontSize: 20,
+        marginTop: "5%",
+        marginLeft: "5%"
+    }
 });
